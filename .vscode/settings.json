@@ -1,0 +1,11 @@
+{
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": true,
+  "files.trimTrailingWhitespace": true,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.formatOnSave": true,
+  "search.exclude": {
+    "manifest": true,
+    "manifests": true
+  },
+}
