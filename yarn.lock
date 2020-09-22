@@ -23,6 +23,11 @@
     chalk "^2.0.0"
     js-tokens "^4.0.0"
 
+"@d2api/manifest-patcher@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@d2api/manifest-patcher/-/manifest-patcher-1.0.0.tgz#d4bc3bbed69238f30c2e47c1899d0a9de505c2ed"
+  integrity sha512-vbHJUkmZ9Fvi9W8LbYN2/Zz17wf1+LkxS1S+wMTUZrKZA1rwLkfWjRAIBN5n6GfN8BXI3aPg6aFcVPXYuFQijA==
+
 "@d2api/manifest@^1.0.1":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@d2api/manifest/-/manifest-1.0.1.tgz#271454a50908509e31aa5c4fff8c0315f9917755"
@@ -62,6 +67,11 @@
   integrity sha512-B42Sxuaz09MhC3DDeW5kubRcQ5by4iuVQ0cRRWM2lggLzAa/KVom0Aft/208NgMvNQQZ86s5rVcqDdn/SH0/mg==
   dependencies:
     "@types/node" "*"
+
+"@types/json-diff@^0.5.0":
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/@types/json-diff/-/json-diff-0.5.0.tgz#ee3690b61f5c62db71b3e0886077b7095b582967"
+  integrity sha512-muxLqd1I9S+aVADC50TDf7hcmeh3oipx6CdkHhSrx3eCCBErY1FgTHa9XCf5lDV9n88dfncu8HcsZedDOJv83Q==
 
 "@types/json-schema@^7.0.3":
   version "7.0.6"
@@ -1129,7 +1139,7 @@ locate-path@^5.0.0:
   dependencies:
     p-locate "^4.1.0"
 
-lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19:
+lodash@^4.17.14, lodash@^4.17.15, lodash@^4.17.19, lodash@^4.17.20:
   version "4.17.20"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
   integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==

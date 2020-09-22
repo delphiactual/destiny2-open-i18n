@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@d2api/manifest": "^1.0.1",
+    "@d2api/manifest-patcher": "^1.0.0",
     "@types/fs-extra": "^9.0.1",
+    "@types/json-diff": "^0.5.0",
     "@types/lodash": "^4.14.161",
     "@types/node": "^14.0.1",
     "@typescript-eslint/eslint-plugin": "^2.34.0",
@@ -22,6 +24,7 @@
     "fs": "^0.0.1-security",
     "fs-extra": "^9.0.1",
     "json-diff": "^0.5.4",
+    "lodash": "^4.17.20",
     "prettier-plugin-organize-imports": "^1.1.1",
     "typescript": "^3.9.2",
     "util": "^0.12.3"
