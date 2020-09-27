@@ -1,12 +1,12 @@
 import { traverseObject } from '@d2api/manifest-patcher';
-import { allManifest, load, setLanguage, verbose } from '@d2api/manifest/node';
+import { allManifest, load, setLanguage } from '@d2api/manifest/node';
 import _ from 'lodash';
+import { writeFile } from './helpers';
 
 (async () => {
   const output: [string, string][] = [];
 
   //load two manifests
-  verbose();
   await load();
   const manifestEN = allManifest! as any;
   setLanguage('de');
@@ -30,4 +30,5 @@ import _ from 'lodash';
   console.log(new Set(output.map((a) => a[1]).filter(Boolean)).size);
   // sample data
   console.log(JSON.stringify(output.slice(0, 3), null, 2));
+  writeFile('./output/diff.json', output);
 })();

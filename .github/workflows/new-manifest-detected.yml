@@ -1,0 +1,42 @@
+# This workflow runs when a new manifest is detected by https://github.com/DestinyItemManager/d2-manifest-bot
+name: Pull Request Merge Flow
+on:
+  repository_dispatch:
+    types: [new-manifest-detected]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Checkout - DIM
+        uses: actions/checkout@v2
+
+      - name: Install Node
+        uses: actions/setup-node@v1.4.2
+        with:
+          node-version: '14.x'
+
+      - name: yarn install
+        uses: bahmutov/npm-install@v1
+
+      - name: Build
+        run: yarn build
+
+      - name: Generate diff
+        run: yarn diff
+
+      - name: Check for new files
+        id: new-data
+        run: echo ::set-output name=porcelain::"$(git status --porcelain)"
+
+      - name: Commit other updated values
+        if: steps.new-data.outputs.porcelain
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: bare manifest
+          commit_user_name: DIM i18n Bot
+          commit_user_email: destinyitemmanager@gmail.com
+          commit_author: DIM i18n Bot <destinyitemmanager@gmail.com>
