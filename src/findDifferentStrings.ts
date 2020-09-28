@@ -5,6 +5,7 @@ import { writeFile } from './helpers';
 
 (async () => {
   const output: [string, string][] = [];
+  const i18nMe: Record<string, string> = {};
 
   //load two manifests
   await load();
@@ -21,6 +22,7 @@ import { writeFile } from './helpers';
       const stringDE = _.get(manifestDE, foundAtPath);
       if (typeof stringDE === 'string' && stringDE !== foundValue) {
         output.push([foundAtPath.join('.'), foundValue]);
+        i18nMe[foundValue] = foundValue;
       }
     }
   });
@@ -31,4 +33,5 @@ import { writeFile } from './helpers';
   // sample data
   console.log(JSON.stringify(output.slice(0, 3), null, 2));
   writeFile('./output/diff.json', output);
+  writeFile('./output/i18n.json', i18nMe);
 })();
